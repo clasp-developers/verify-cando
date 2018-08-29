@@ -11,5 +11,16 @@ using the pdb generate cando parm7 and rst7 files
 and then do ./run_md.sh (modify input file name first)   
 compare the .info file in this folder to .info file in the lysozyme folder   
 
-
+Folder Lysozyme-TI
+1. setup
+        Run the scripts
+        a. 1_leap.sh
+        b. 2_run_md.sh
+        c. 3_strip.sh
+        d. 4_leap.sh
+2. free_energy
+        a. setup.sh
+        b. submit_complex.sh
+        c. submit_ligands.sh
+        d. analyse.sh
 
