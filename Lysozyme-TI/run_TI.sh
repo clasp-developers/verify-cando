@@ -19,7 +19,7 @@
 # Free_energy calculation - TI
 # setup of the protocol for TI and run
 ./free_energy/setup.sh
-./submit_complex.sh
-./submit_ligands.sh
-./analyse.sh > result-TI.txt
+.free_energy/submit_complex.sh
+.free_energy/submit_ligands.sh
+.free_energy/analyse.sh > result-TI.txt
 
