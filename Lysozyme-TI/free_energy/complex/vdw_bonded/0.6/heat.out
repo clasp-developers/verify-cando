@@ -1,0 +1,981 @@
+
+          -------------------------------------------------------
+          Amber 18 PMEMD                              2018
+          -------------------------------------------------------
+
+| PMEMD implementation of SANDER, Release 18
+
+| Run on 07/18/2018 at 23:44:11
+
+|   Executable path: /home/case/amber18/bin/pmemd.MPI
+| Working directory: /home/uv10/T4-lysozyme/one-step/free_energy/complex/vdw_bonded/0.6
+|          Hostname: casegroup4.rutgers.edu
+
+  [-O]verwriting output
+
+File Assignments:
+|   MDIN: heat.in                                                               
+|  MDOUT: heat.out                                                              
+| INPCRD: ti.rst7                                                               
+|   PARM: ti.parm7                                                              
+| RESTRT: heat.rst7                                                             
+|   REFC: ti.rst7                                                               
+|  MDVEL: mdvel                                                                 
+|   MDEN: heat.en                                                               
+|  MDCRD: heat.nc                                                               
+| MDINFO: heat.info                                                             
+|LOGFILE: heat.log                                                              
+|  MDFRC: mdfrc                                                                 
+
+
+ Here is the input file:
+
+heating                                                                        
+ &cntrl                                                                        
+   imin = 0, nstlim = 10000, irest = 0, ntx = 1, dt = 0.002,                   
+   ntt = 1, temp0 = 300.0, tempi = 50.0, tautp = 1.0,                          
+   ntc = 2, ntf = 1,                                                           
+   ntb = 1,                                                                    
+   ioutfm = 1, iwrap = 1,                                                      
+   ntwe = 1000, ntwx = 1000, ntpr = 1000, ntwr = 5000,                         
+                                                                               
+   nmropt = 1,                                                                 
+   ntr = 1, restraint_wt = 5.00,                                               
+   restraintmask='!:WAT & !@H=',                                               
+                                                                               
+   icfe = 1, clambda = 0.6, scalpha = 0.5, scbeta = 12.0,                      
+   logdvdl = 0,                                                                
+   timask1 = ':1', timask2 = ':2',                                             
+   ifsc=1, scmask1=':1@H6', scmask2=':2@O1,H6'                                 
+ /                                                                             
+                                                                               
+ &ewald                                                                        
+ /                                                                             
+                                                                               
+ &wt                                                                           
+   type='TEMP0',                                                               
+   istep1 = 0, istep2 = 8000,                                                  
+   value1 = 50.0, value2 = 300.0                                               
+ /                                                                             
+                                                                               
+ &wt type = 'END'                                                              
+ /                                                                             
+                                                                               
+
+
+Note: ig = -1. Setting random seed to   933943 based on wallclock time in
+      microseconds and disabling the synchronization of random numbers 
+      between tasks to improve performance.
+| irandom = 1, using AMBER's internal random number generator (default).
+ 
+ 
+| Conditional Compilation Defines Used:
+| MPI
+| PUBFFT
+| BINTRAJ
+| EMIL
+
+| Largest sphere to fit in unit cell has radius =    31.244
+
+| New format PARM file being parsed.
+| Version =    1.000 Date = 07/16/18 Time = 16:53:54
+
+| Note: 1-4 EEL scale factors are being read from the topology file.
+
+| Note: 1-4 VDW scale factors are being read from the topology file.
+| Duplicated    0 dihedrals
+
+| Duplicated    0 dihedrals
+
+--------------------------------------------------------------------------------
+   1.  RESOURCE   USE: 
+--------------------------------------------------------------------------------
+
+ getting box info from netcdf restart file
+ NATOM  =   30553 NTYPES =      17 NBONH =   29246 MBONA  =    1323
+ NTHETH =    2992 MTHETA =    1779 NPHIH =    6075 MPHIA  =    5535
+ NHPARM =       0 NPARM  =       0 NNB   =   51644 NRES   =    9475
+ NBONA  =    1323 NTHETA =    1779 NPHIA =    5535 NUMBND =      69
+ NUMANG =     153 NPTRA  =     180 NATYP =      38 NPHB   =       1
+ IFBOX  =       1 NMXRS  =      24 IFCAP =       0 NEXTRA =       0
+ NCOPY  =       0
+
+| Coordinate Index Table dimensions:    12   13   14
+| Direct force subcell size =     5.2074    5.1252    5.3431
+
+     BOX TYPE: RECTILINEAR
+
+--------------------------------------------------------------------------------
+   2.  CONTROL  DATA  FOR  THE  RUN
+--------------------------------------------------------------------------------
+
+default_name                                                                    
+
+General flags:
+     imin    =       0, nmropt  =       1
+
+Nature and format of input:
+     ntx     =       1, irest   =       0, ntrx    =       1
+
+Nature and format of output:
+     ntxo    =       2, ntpr    =    1000, ntrx    =       1, ntwr    =    5000
+     iwrap   =       1, ntwx    =    1000, ntwv    =       0, ntwe    =    1000
+     ioutfm  =       1, ntwprt  =       0, idecomp =       0, rbornstat=      0
+
+Potential function:
+     ntf     =       1, ntb     =       1, igb     =       0, nsnb    =      25
+     ipol    =       0, gbsa    =       0, iesp    =       0
+     dielc   =   1.00000, cut     =   8.00000, intdiel =   1.00000
+
+Frozen or restrained atoms:
+     ibelly  =       0, ntr     =       1
+     restraint_wt =   5.00000
+
+Molecular dynamics:
+     nstlim  =     10000, nscm    =         0, nrespa  =         1
+     t       =   0.00000, dt      =   0.00200, vlimit  =  20.00000
+
+Berendsen (weak-coupling) temperature regulation:
+     temp0   = 300.00000, tempi   =  50.00000, tautp   =   1.00000
+
+SHAKE:
+     ntc     =       2, jfastw  =       0
+     tol     =   0.00001
+
+NMR refinement options:
+     iscale  =       0, noeskp  =       1, ipnlty  =       1, mxsub   =       1
+     scalm   = 100.00000, pencut  =   0.10000, tausw   =   0.10000
+
+Free energy options:
+     icfe    =       1, ifsc    =       1, klambda =       1
+     clambda =  0.6000, scalpha =  0.5000, scbeta  = 12.0000
+     sceeorder =       2
+     dynlmb =  0.0000 logdvdl =       0
+
+| Intermolecular bonds treatment:
+|     no_intermolecular_bonds =       1
+
+| Energy averages sample interval:
+|     ene_avg_sampling =    1000
+
+Ewald parameters:
+     verbose =       0, ew_type =       0, nbflag  =       1, use_pme =       1
+     vdwmeth =       1, eedmeth =       1, netfrc  =       1
+     Box X =   62.489   Box Y =   66.628   Box Z =   74.803
+     Alpha =   90.000   Beta  =   90.000   Gamma =   90.000
+     NFFT1 =   64       NFFT2 =   72       NFFT3 =   75
+     Cutoff=    8.000   Tol   =0.100E-04
+     Ewald Coefficient =  0.34864
+     Interpolation order =    4
+
+| PMEMD ewald parallel performance parameters:
+|     block_fft =    0
+|     fft_blk_y_divisor =    2
+|     excl_recip =    0
+|     excl_master =    0
+|     atm_redist_freq =  320
+
+    LOADING THE CONSTRAINED ATOMS AS GROUPS
+
+
+   5.  REFERENCE ATOM COORDINATES
+
+  default_name                                                                    
+     Mask !:WAT & !@H=; matches  1307 atoms
+     TI Mask 1 :1; matches     12 atoms
+     TI Mask 2 :2; matches     13 atoms
+     TI region 1:   30540 atoms
+     TI region 2:   30541 atoms
+     SC Mask 1 :1@H6; matches      1 atoms
+     SC Mask 2 :2@O1,H6; matches      2 atoms
+
+--------------------------------------------------------------------------------
+   3.  ATOMIC COORDINATES AND VELOCITIES
+--------------------------------------------------------------------------------
+
+default_name                                                                    
+ begin time read from input coords =    40.000 ps
+
+
+
+           Begin reading energy term weight changes/NMR restraints
+ WEIGHT CHANGES:
+ TEMP0         0   8000   50.000000  300.000000      0      0
+
+ RESTRAINTS:
+                          ** No restraint defined **
+
+                  Done reading weight changes/NMR restraints
+
+
+ 
+ Number of triangulated 3-point waters found:     9307
+ WARNING: SHAKEn bond for atoms       12       11 is partially softcore.
+ Coordinates for common atoms will be synchronized from V0. 
+ Consider using noshake mask or disabling SHAKE.
+
+ Number of shake restraints removed in TI region  1 :        0
+ Number of shake restraints removed in TI region  2 :        0
+
+     Sum of charges for TI region  1 =   0.00039993
+     Forcing neutrality...
+
+
+     Sum of charges for TI region  2 =   0.00040093
+     Forcing neutrality...
+
+| Dynamic Memory, Types Used:
+| Reals             1929089
+| Integers          1697197
+
+| Nonbonded Pairs Initial Allocation:     1741521
+
+| Running AMBER/MPI version on    4 MPI task
+
+ 
+--------------------------------------------------------------------------------
+   4.  RESULTS
+--------------------------------------------------------------------------------
+
+ ---------------------------------------------------
+ APPROXIMATING switch and d/dx switch using CUBIC SPLINE INTERPOLATION
+ using   5000.0 points per unit in tabled values
+ TESTING RELATIVE ERROR over r ranging from 0.0 to cutoff
+| CHECK switch(x): max rel err =   0.2738E-14   at   2.422500
+| CHECK d/dx switch(x): max rel err =   0.8332E-11   at   2.782960
+ ---------------------------------------------------
+|---------------------------------------------------
+| APPROXIMATING direct energy using CUBIC SPLINE INTERPOLATION
+|  with   50.0 points per unit in tabled values
+| Relative Error Limit not exceeded for r .gt.   2.47
+| APPROXIMATING direct force using CUBIC SPLINE INTERPOLATION
+|  with   50.0 points per unit in tabled values
+| Relative Error Limit not exceeded for r .gt.   2.89
+|---------------------------------------------------
+   DOF for the SC part  1 of the system:    2
+   SHAKE constraints in the SC region:    1
+   DOF for the SC part  2 of the system:    5
+   SHAKE constraints in the SC region:    1
+
+| TI region  1
+
+
+ NSTEP =        0   TIME(PS) =       0.000  TEMP(K) =    73.53  PRESS =     0.0
+ Etot   =    -87446.0046  EKtot   =      4557.6906  EPtot      =    -92003.6952
+ BOND   =       437.9888  ANGLE   =      1143.7940  DIHED      =      2027.7755
+ 1-4 NB =       611.7146  1-4 EEL =      5954.6069  VDWAALS    =     11054.1897
+ EELEC  =   -113233.7646  EHBOND  =         0.0000  RESTRAINT  =         0.0000
+ DV/DL  =        17.5979
+ Ewald error estimate:   0.8505E-04
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =         145.48
+ SC_Etot=         1.9067  SC_EKtot=         0.2891  SC_EPtot   =         1.6176
+ SC_BOND=         0.0000  SC_ANGLE=         0.5156  SC_DIHED   =         0.0896
+ SC_14NB=        -0.0044  SC_14EEL=         1.0167  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.9213  SC_VDW_DER=      10.6508  SC_DERIV   =        11.5721
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =        0   TIME(PS) =       0.000  TEMP(K) =    73.53  PRESS =     0.0
+ Etot   =    -87446.0738  EKtot   =      4557.6214  EPtot      =    -92003.6952
+ BOND   =       437.9888  ANGLE   =      1143.7940  DIHED      =      2027.7755
+ 1-4 NB =       611.7146  1-4 EEL =      5954.6069  VDWAALS    =     11054.1897
+ EELEC  =   -113233.7646  EHBOND  =         0.0000  RESTRAINT  =         0.0000
+ DV/DL  =        17.5979
+ Ewald error estimate:   0.8505E-04
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =          26.84
+ SC_Etot=       -38.3622  SC_EKtot=         0.1333  SC_EPtot   =       -38.4955
+ SC_BOND=         0.1698  SC_ANGLE=         0.8107  SC_DIHED   =         0.1592
+ SC_14NB=         0.1042  SC_14EEL=       -39.7393  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.9213  SC_VDW_DER=      10.6508  SC_DERIV   =        11.5721
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+ NSTEP =     1000   TIME(PS) =       2.000  TEMP(K) =   135.80  PRESS =     0.0
+ Etot   =   -100629.6159  EKtot   =      8416.7882  EPtot      =   -109046.4041
+ BOND   =       202.5539  ANGLE   =       545.1234  DIHED      =      1878.4288
+ 1-4 NB =       567.0665  1-4 EEL =      5944.1605  VDWAALS    =     15921.8880
+ EELEC  =   -134251.3210  EHBOND  =         0.0000  RESTRAINT  =       145.6958
+ EAMBER (non-restraint)  =   -109192.0999
+ DV/DL  =        12.5658
+ Ewald error estimate:   0.2133E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =          16.89
+ SC_Etot=         1.3424  SC_EKtot=         0.0336  SC_EPtot   =         1.3088
+ SC_BOND=         0.0000  SC_ANGLE=         0.0378  SC_DIHED   =         0.2293
+ SC_14NB=        -0.0065  SC_14EEL=         1.0482  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.9370  SC_VDW_DER=       6.7385  SC_DERIV   =         7.6755
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =     1000   TIME(PS) =       2.000  TEMP(K) =   135.79  PRESS =     0.0
+ Etot   =   -100629.5043  EKtot   =      8416.8997  EPtot      =   -109046.4041
+ BOND   =       202.5539  ANGLE   =       545.1234  DIHED      =      1878.4288
+ 1-4 NB =       567.0665  1-4 EEL =      5944.1605  VDWAALS    =     15921.8880
+ EELEC  =   -134251.3210  EHBOND  =         0.0000  RESTRAINT  =       145.6958
+ EAMBER (non-restraint)  =   -109192.0999
+ DV/DL  =        12.5658
+ Ewald error estimate:   0.2133E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =          29.21
+ SC_Etot=       -38.4365  SC_EKtot=         0.1451  SC_EPtot   =       -38.5816
+ SC_BOND=         0.5292  SC_ANGLE=         0.3040  SC_DIHED   =         0.1692
+ SC_14NB=         0.1387  SC_14EEL=       -39.7227  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.1207  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.9370  SC_VDW_DER=       6.7385  SC_DERIV   =         7.6755
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+ NSTEP =     2000   TIME(PS) =       4.000  TEMP(K) =   118.36  PRESS =     0.0
+ Etot   =   -103990.3941  EKtot   =      7336.0772  EPtot      =   -111326.4713
+ BOND   =       174.7003  ANGLE   =       494.3786  DIHED      =      1860.6176
+ 1-4 NB =       568.7914  1-4 EEL =      5972.3490  VDWAALS    =     16861.1528
+ EELEC  =   -137392.1145  EHBOND  =         0.0000  RESTRAINT  =       133.6534
+ EAMBER (non-restraint)  =   -111460.1247
+ DV/DL  =        11.7625
+ Ewald error estimate:   0.2144E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =         152.74
+ SC_Etot=         1.6609  SC_EKtot=         0.3035  SC_EPtot   =         1.3574
+ SC_BOND=         0.0000  SC_ANGLE=         0.0220  SC_DIHED   =         0.3406
+ SC_14NB=        -0.0130  SC_14EEL=         1.0078  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.5825  SC_VDW_DER=       6.9196  SC_DERIV   =         7.5021
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =     2000   TIME(PS) =       4.000  TEMP(K) =   118.35  PRESS =     0.0
+ Etot   =   -103990.4212  EKtot   =      7336.0501  EPtot      =   -111326.4713
+ BOND   =       174.7003  ANGLE   =       494.3786  DIHED      =      1860.6176
+ 1-4 NB =       568.7914  1-4 EEL =      5972.3490  VDWAALS    =     16861.1528
+ EELEC  =   -137392.1145  EHBOND  =         0.0000  RESTRAINT  =       133.6534
+ EAMBER (non-restraint)  =   -111460.1247
+ DV/DL  =        11.7625
+ Ewald error estimate:   0.2144E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =          55.63
+ SC_Etot=       -37.5113  SC_EKtot=         0.2764  SC_EPtot   =       -37.7877
+ SC_BOND=         0.1072  SC_ANGLE=         0.2372  SC_DIHED   =         0.3660
+ SC_14NB=         0.0684  SC_14EEL=       -38.5665  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0246  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.5825  SC_VDW_DER=       6.9196  SC_DERIV   =         7.5021
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+ NSTEP =     3000   TIME(PS) =       6.000  TEMP(K) =   127.10  PRESS =     0.0
+ Etot   =   -103119.6567  EKtot   =      7877.4896  EPtot      =   -110997.1463
+ BOND   =       217.2882  ANGLE   =       511.5298  DIHED      =      1872.8744
+ 1-4 NB =       557.4709  1-4 EEL =      5949.0780  VDWAALS    =     17027.9220
+ EELEC  =   -137276.2090  EHBOND  =         0.0000  RESTRAINT  =       142.8994
+ EAMBER (non-restraint)  =   -111140.0457
+ DV/DL  =        13.0722
+ Ewald error estimate:   0.2474E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =          82.17
+ SC_Etot=         1.5556  SC_EKtot=         0.1633  SC_EPtot   =         1.3923
+ SC_BOND=         0.0000  SC_ANGLE=         0.0264  SC_DIHED   =         0.3190
+ SC_14NB=        -0.0034  SC_14EEL=         1.0504  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.8944  SC_VDW_DER=       7.0406  SC_DERIV   =         7.9350
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =     3000   TIME(PS) =       6.000  TEMP(K) =   127.10  PRESS =     0.0
+ Etot   =   -103119.2882  EKtot   =      7877.8581  EPtot      =   -110997.1463
+ BOND   =       217.2882  ANGLE   =       511.5298  DIHED      =      1872.8744
+ 1-4 NB =       557.4709  1-4 EEL =      5949.0780  VDWAALS    =     17027.9220
+ EELEC  =   -137276.2090  EHBOND  =         0.0000  RESTRAINT  =       142.8994
+ EAMBER (non-restraint)  =   -111140.0457
+ DV/DL  =        13.0722
+ Ewald error estimate:   0.2474E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =         107.05
+ SC_Etot=       -38.3057  SC_EKtot=         0.5318  SC_EPtot   =       -38.8375
+ SC_BOND=         0.0374  SC_ANGLE=         0.4840  SC_DIHED   =         0.1240
+ SC_14NB=         0.1242  SC_14EEL=       -39.6072  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0117  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.8944  SC_VDW_DER=       7.0406  SC_DERIV   =         7.9350
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+ NSTEP =     4000   TIME(PS) =       8.000  TEMP(K) =   147.81  PRESS =     0.0
+ Etot   =   -100378.5818  EKtot   =      9161.6303  EPtot      =   -109540.2121
+ BOND   =       221.4674  ANGLE   =       597.1454  DIHED      =      1886.9433
+ 1-4 NB =       563.0797  1-4 EEL =      5946.7042  VDWAALS    =     17015.4576
+ EELEC  =   -135936.9429  EHBOND  =         0.0000  RESTRAINT  =       165.9332
+ EAMBER (non-restraint)  =   -109706.1453
+ DV/DL  =        10.3024
+ Ewald error estimate:   0.2534E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =          30.62
+ SC_Etot=         1.2942  SC_EKtot=         0.0608  SC_EPtot   =         1.2334
+ SC_BOND=         0.0000  SC_ANGLE=         0.0653  SC_DIHED   =         0.1407
+ SC_14NB=         0.0001  SC_14EEL=         1.0273  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.8678  SC_VDW_DER=       5.2738  SC_DERIV   =         6.1416
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =     4000   TIME(PS) =       8.000  TEMP(K) =   147.81  PRESS =     0.0
+ Etot   =   -100378.4804  EKtot   =      9161.7317  EPtot      =   -109540.2121
+ BOND   =       221.4674  ANGLE   =       597.1454  DIHED      =      1886.9433
+ 1-4 NB =       563.0797  1-4 EEL =      5946.7042  VDWAALS    =     17015.4576
+ EELEC  =   -135936.9429  EHBOND  =         0.0000  RESTRAINT  =       165.9332
+ EAMBER (non-restraint)  =   -109706.1453
+ DV/DL  =        10.3024
+ Ewald error estimate:   0.2534E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =          32.64
+ SC_Etot=       -38.1266  SC_EKtot=         0.1622  SC_EPtot   =       -38.2888
+ SC_BOND=         0.4536  SC_ANGLE=         0.3886  SC_DIHED   =         0.4059
+ SC_14NB=         0.1406  SC_14EEL=       -39.6774  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0463  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.8678  SC_VDW_DER=       5.2738  SC_DERIV   =         6.1416
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+ NSTEP =     5000   TIME(PS) =      10.000  TEMP(K) =   175.47  PRESS =     0.0
+ Etot   =    -96780.4574  EKtot   =     10875.4722  EPtot      =   -107655.9296
+ BOND   =       265.0433  ANGLE   =       669.7624  DIHED      =      1911.4089
+ 1-4 NB =       575.3536  1-4 EEL =      5965.1932  VDWAALS    =     16582.8465
+ EELEC  =   -133810.9107  EHBOND  =         0.0000  RESTRAINT  =       185.3732
+ EAMBER (non-restraint)  =   -107841.3028
+ DV/DL  =         7.9388
+ Ewald error estimate:   0.1859E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =          23.89
+ SC_Etot=         1.1915  SC_EKtot=         0.0475  SC_EPtot   =         1.1440
+ SC_BOND=         0.0000  SC_ANGLE=         0.0211  SC_DIHED   =         0.0708
+ SC_14NB=        -0.0039  SC_14EEL=         1.0561  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.8519  SC_VDW_DER=       3.5827  SC_DERIV   =         4.4347
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =     5000   TIME(PS) =      10.000  TEMP(K) =   175.47  PRESS =     0.0
+ Etot   =    -96779.6977  EKtot   =     10876.2319  EPtot      =   -107655.9296
+ BOND   =       265.0433  ANGLE   =       669.7624  DIHED      =      1911.4089
+ 1-4 NB =       575.3536  1-4 EEL =      5965.1932  VDWAALS    =     16582.8465
+ EELEC  =   -133810.9107  EHBOND  =         0.0000  RESTRAINT  =       185.3732
+ EAMBER (non-restraint)  =   -107841.3028
+ DV/DL  =         7.9388
+ Ewald error estimate:   0.1859E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =         162.48
+ SC_Etot=       -37.1557  SC_EKtot=         0.8072  SC_EPtot   =       -37.9628
+ SC_BOND=         0.4953  SC_ANGLE=         0.2868  SC_DIHED   =         0.0768
+ SC_14NB=         0.1731  SC_14EEL=       -38.9948  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0862  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.8519  SC_VDW_DER=       3.5827  SC_DERIV   =         4.4347
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+ NSTEP =     6000   TIME(PS) =      12.000  TEMP(K) =   201.83  PRESS =     0.0
+ Etot   =    -92660.0567  EKtot   =     12509.7505  EPtot      =   -105169.8073
+ BOND   =       296.2821  ANGLE   =       759.1843  DIHED      =      1931.9142
+ 1-4 NB =       590.2501  1-4 EEL =      5983.3662  VDWAALS    =     15913.7304
+ EELEC  =   -130839.7825  EHBOND  =         0.0000  RESTRAINT  =       195.2479
+ EAMBER (non-restraint)  =   -105365.0552
+ DV/DL  =        10.6636
+ Ewald error estimate:   0.2174E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =         101.87
+ SC_Etot=         1.6635  SC_EKtot=         0.2024  SC_EPtot   =         1.4611
+ SC_BOND=         0.0000  SC_ANGLE=         0.0536  SC_DIHED   =         0.3723
+ SC_14NB=         0.0004  SC_14EEL=         1.0348  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.9355  SC_VDW_DER=       4.6172  SC_DERIV   =         5.5527
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =     6000   TIME(PS) =      12.000  TEMP(K) =   201.83  PRESS =     0.0
+ Etot   =    -92659.4926  EKtot   =     12510.3146  EPtot      =   -105169.8073
+ BOND   =       296.2821  ANGLE   =       759.1843  DIHED      =      1931.9142
+ 1-4 NB =       590.2501  1-4 EEL =      5983.3662  VDWAALS    =     15913.7304
+ EELEC  =   -130839.7825  EHBOND  =         0.0000  RESTRAINT  =       195.2479
+ EAMBER (non-restraint)  =   -105365.0552
+ DV/DL  =        10.6636
+ Ewald error estimate:   0.2174E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =         154.30
+ SC_Etot=       -36.7030  SC_EKtot=         0.7666  SC_EPtot   =       -37.4696
+ SC_BOND=         0.4397  SC_ANGLE=         1.3854  SC_DIHED   =         1.0547
+ SC_14NB=         0.1662  SC_14EEL=       -40.5156  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.4567  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.9355  SC_VDW_DER=       4.6172  SC_DERIV   =         5.5527
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+ NSTEP =     7000   TIME(PS) =      14.000  TEMP(K) =   228.23  PRESS =     0.0
+ Etot   =    -88019.5308  EKtot   =     14146.0463  EPtot      =   -102165.5771
+ BOND   =       335.3190  ANGLE   =       900.9919  DIHED      =      1982.4879
+ 1-4 NB =       570.8090  1-4 EEL =      5947.2099  VDWAALS    =     14758.2070
+ EELEC  =   -126872.6430  EHBOND  =         0.0000  RESTRAINT  =       212.0413
+ EAMBER (non-restraint)  =   -102377.6184
+ DV/DL  =         9.6188
+ Ewald error estimate:   0.1321E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =          29.09
+ SC_Etot=         1.7213  SC_EKtot=         0.0578  SC_EPtot   =         1.6635
+ SC_BOND=         0.0000  SC_ANGLE=         0.0099  SC_DIHED   =         0.5587
+ SC_14NB=         0.0038  SC_14EEL=         1.0912  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      1.0872  SC_VDW_DER=       4.4761  SC_DERIV   =         5.5633
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =     7000   TIME(PS) =      14.000  TEMP(K) =   228.26  PRESS =     0.0
+ Etot   =    -88017.3137  EKtot   =     14148.2635  EPtot      =   -102165.5771
+ BOND   =       335.3190  ANGLE   =       900.9919  DIHED      =      1982.4879
+ 1-4 NB =       570.8090  1-4 EEL =      5947.2099  VDWAALS    =     14758.2070
+ EELEC  =   -126872.6430  EHBOND  =         0.0000  RESTRAINT  =       212.0413
+ EAMBER (non-restraint)  =   -102377.6184
+ DV/DL  =         9.6188
+ Ewald error estimate:   0.1321E-03
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =         457.92
+ SC_Etot=       -35.2009  SC_EKtot=         2.2749  SC_EPtot   =       -37.4758
+ SC_BOND=         0.3660  SC_ANGLE=         1.6098  SC_DIHED   =         0.9872
+ SC_14NB=         0.1997  SC_14EEL=       -40.6385  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.7636  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      1.0872  SC_VDW_DER=       4.4761  SC_DERIV   =         5.5633
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+ NSTEP =     8000   TIME(PS) =      16.000  TEMP(K) =   253.06  PRESS =     0.0
+ Etot   =    -82747.5549  EKtot   =     15684.7713  EPtot      =    -98432.3261
+ BOND   =       390.8679  ANGLE   =      1018.8370  DIHED      =      2002.4084
+ 1-4 NB =       598.3442  1-4 EEL =      5922.1584  VDWAALS    =     13248.5220
+ EELEC  =   -121847.9262  EHBOND  =         0.0000  RESTRAINT  =       234.4621
+ EAMBER (non-restraint)  =    -98666.7883
+ DV/DL  =        11.7225
+ Ewald error estimate:   0.3245E-04
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =          31.22
+ SC_Etot=         2.9034  SC_EKtot=         0.0620  SC_EPtot   =         2.8413
+ SC_BOND=         0.0000  SC_ANGLE=         0.3424  SC_DIHED   =         1.4908
+ SC_14NB=        -0.0093  SC_14EEL=         1.0173  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.8403  SC_VDW_DER=       6.5174  SC_DERIV   =         7.3577
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =     8000   TIME(PS) =      16.000  TEMP(K) =   253.07  PRESS =     0.0
+ Etot   =    -82746.2803  EKtot   =     15686.0459  EPtot      =    -98432.3261
+ BOND   =       390.8679  ANGLE   =      1018.8370  DIHED      =      2002.4084
+ 1-4 NB =       598.3442  1-4 EEL =      5922.1584  VDWAALS    =     13248.5220
+ EELEC  =   -121847.9262  EHBOND  =         0.0000  RESTRAINT  =       234.4621
+ EAMBER (non-restraint)  =    -98666.7883
+ DV/DL  =        11.7225
+ Ewald error estimate:   0.3245E-04
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =         269.05
+ SC_Etot=       -36.0264  SC_EKtot=         1.3366  SC_EPtot   =       -37.3630
+ SC_BOND=         1.5174  SC_ANGLE=         1.2566  SC_DIHED   =         0.2894
+ SC_14NB=         0.1426  SC_14EEL=       -40.5689  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.2663  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.8403  SC_VDW_DER=       6.5174  SC_DERIV   =         7.3577
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+ NSTEP =     9000   TIME(PS) =      18.000  TEMP(K) =   273.83  PRESS =     0.0
+ Etot   =    -78482.9953  EKtot   =     16972.0006  EPtot      =    -95454.9959
+ BOND   =       428.7490  ANGLE   =      1148.1261  DIHED      =      2030.6381
+ 1-4 NB =       606.9675  1-4 EEL =      5933.0425  VDWAALS    =     12263.1987
+ EELEC  =   -118118.2438  EHBOND  =         0.0000  RESTRAINT  =       252.5260
+ EAMBER (non-restraint)  =    -95707.5219
+ DV/DL  =        14.4887
+ Ewald error estimate:   0.5564E-04
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =         150.75
+ SC_Etot=         2.1410  SC_EKtot=         0.2996  SC_EPtot   =         1.8414
+ SC_BOND=         0.0000  SC_ANGLE=         0.1077  SC_DIHED   =         0.7272
+ SC_14NB=        -0.0079  SC_14EEL=         1.0144  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.7055  SC_VDW_DER=       8.9701  SC_DERIV   =         9.6755
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =     9000   TIME(PS) =      18.000  TEMP(K) =   273.84  PRESS =     0.0
+ Etot   =    -78481.6890  EKtot   =     16973.3070  EPtot      =    -95454.9959
+ BOND   =       428.7490  ANGLE   =      1148.1261  DIHED      =      2030.6381
+ 1-4 NB =       606.9675  1-4 EEL =      5933.0425  VDWAALS    =     12263.1987
+ EELEC  =   -118118.2438  EHBOND  =         0.0000  RESTRAINT  =       252.5260
+ EAMBER (non-restraint)  =    -95707.5219
+ DV/DL  =        14.4887
+ Ewald error estimate:   0.5564E-04
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =         323.26
+ SC_Etot=       -36.4159  SC_EKtot=         1.6060  SC_EPtot   =       -38.0218
+ SC_BOND=         0.0154  SC_ANGLE=         1.6237  SC_DIHED   =         0.3596
+ SC_14NB=         0.0612  SC_14EEL=       -40.0816  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.2805  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.7055  SC_VDW_DER=       8.9701  SC_DERIV   =         9.6755
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+ NSTEP =    10000   TIME(PS) =      20.000  TEMP(K) =   287.21  PRESS =     0.0
+ Etot   =    -76160.4701  EKtot   =     17801.3774  EPtot      =    -93961.8475
+ BOND   =       440.4099  ANGLE   =      1169.2637  DIHED      =      2048.3562
+ 1-4 NB =       609.6166  1-4 EEL =      6005.3386  VDWAALS    =     11582.7799
+ EELEC  =   -116085.6620  EHBOND  =         0.0000  RESTRAINT  =       268.0496
+ EAMBER (non-restraint)  =    -94229.8971
+ DV/DL  =        11.2188
+ Ewald error estimate:   0.3134E-04
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =         911.40
+ SC_Etot=         3.1439  SC_EKtot=         1.8111  SC_EPtot   =         1.3327
+ SC_BOND=         0.0000  SC_ANGLE=         0.2170  SC_DIHED   =         0.0233
+ SC_14NB=         0.0021  SC_14EEL=         1.0903  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.7012  SC_VDW_DER=       6.7067  SC_DERIV   =         7.4079
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+ NSTEP =    10000   TIME(PS) =      20.000  TEMP(K) =   287.18  PRESS =     0.0
+ Etot   =    -76161.7312  EKtot   =     17800.1163  EPtot      =    -93961.8475
+ BOND   =       440.4099  ANGLE   =      1169.2637  DIHED      =      2048.3562
+ 1-4 NB =       609.6166  1-4 EEL =      6005.3386  VDWAALS    =     11582.7799
+ EELEC  =   -116085.6620  EHBOND  =         0.0000  RESTRAINT  =       268.0496
+ EAMBER (non-restraint)  =    -94229.8971
+ DV/DL  =        11.2188
+ Ewald error estimate:   0.3134E-04
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =         110.72
+ SC_Etot=       -37.5456  SC_EKtot=         0.5501  SC_EPtot   =       -38.0956
+ SC_BOND=         0.0492  SC_ANGLE=         0.3252  SC_DIHED   =         0.4728
+ SC_14NB=         0.1421  SC_14EEL=       -39.0849  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     1.3823  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.7012  SC_VDW_DER=       6.7067  SC_DERIV   =         7.4079
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| TI region  1
+
+
+      A V E R A G E S   O V E R      10 S T E P S
+
+
+ NSTEP =    10000   TIME(PS) =      20.000  TEMP(K) =   194.87  PRESS =     0.0
+ Etot   =    -92296.9314  EKtot   =     12078.1404  EPtot      =   -104375.0717
+ BOND   =       297.2681  ANGLE   =       781.4343  DIHED      =      1940.6078
+ 1-4 NB =       580.7750  1-4 EEL =      5956.8600  VDWAALS    =     15117.5705
+ EELEC  =   -129243.1756  EHBOND  =         0.0000  RESTRAINT  =       193.5882
+ EAMBER (non-restraint)  =   -104568.6599
+ DV/DL  =        11.3354
+ Ewald error estimate:   0.1583E-03
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+  Softcore part of the system:       1 atoms,       TEMP(K)    =         153.06
+ SC_Etot=         1.8618  SC_EKtot=         0.3042  SC_EPtot   =         1.5576
+ SC_BOND=         0.0000  SC_ANGLE=         0.0903  SC_DIHED   =         0.4273
+ SC_14NB=        -0.0038  SC_14EEL=         1.0438  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.8403  SC_VDW_DER=       6.0843  SC_DERIV   =         6.9246
+ ------------------------------------------------------------------------------
+
+
+      R M S  F L U C T U A T I O N S
+
+
+ NSTEP =    10000   TIME(PS) =      20.000  TEMP(K) =    59.86  PRESS =     0.0
+ Etot   =      9846.5526  EKtot   =      3710.3395  EPtot      =      6166.6082
+ BOND   =        92.2828  ANGLE   =       247.6992  DIHED      =        66.2940
+ 1-4 NB =        17.9799  1-4 EEL =        23.5620  VDWAALS    =      1948.9483
+ EELEC  =      7625.1534  EHBOND  =         0.0000  RESTRAINT  =        45.0773
+ EAMBER (non-restraint)  =      6121.5309
+ DV/DL  =         1.7556
+ Ewald error estimate:   0.8402E-04
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       1 atoms,       TEMP(K)    =         257.52
+ SC_Etot=         0.6357  SC_EKtot=         0.5117  SC_EPtot   =         0.4696
+ SC_BOND=         0.0000  SC_ANGLE=         0.1023  SC_DIHED   =         0.4089
+ SC_14NB=         0.0051  SC_14EEL=         0.0280  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.0000  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.1368  SC_VDW_DER=       1.5032  SC_DERIV   =         1.4302
+ ------------------------------------------------------------------------------
+
+
+| TI region  2
+
+
+      A V E R A G E S   O V E R      10 S T E P S
+
+
+ NSTEP =    10000   TIME(PS) =      20.000  TEMP(K) =   194.87  PRESS =     0.0
+ Etot   =    -92296.3899  EKtot   =     12078.6819  EPtot      =   -104375.0717
+ BOND   =       297.2681  ANGLE   =       781.4343  DIHED      =      1940.6078
+ 1-4 NB =       580.7750  1-4 EEL =      5956.8600  VDWAALS    =     15117.5705
+ EELEC  =   -129243.1756  EHBOND  =         0.0000  RESTRAINT  =       193.5882
+ EAMBER (non-restraint)  =   -104568.6599
+ DV/DL  =        11.3354
+ Ewald error estimate:   0.1583E-03
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+  Softcore part of the system:       2 atoms,       TEMP(K)    =         170.23
+ SC_Etot=       -37.1427  SC_EKtot=         0.8457  SC_EPtot   =       -37.9884
+ SC_BOND=         0.4010  SC_ANGLE=         0.7901  SC_DIHED   =         0.4305
+ SC_14NB=         0.1357  SC_14EEL=       -39.7458  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.3439  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.8403  SC_VDW_DER=       6.0843  SC_DERIV   =         6.9246
+ ------------------------------------------------------------------------------
+
+
+      R M S  F L U C T U A T I O N S
+
+
+ NSTEP =    10000   TIME(PS) =      20.000  TEMP(K) =    59.86  PRESS =     0.0
+ Etot   =      9846.6575  EKtot   =      3710.4895  EPtot      =      6166.6082
+ BOND   =        92.2828  ANGLE   =       247.6992  DIHED      =        66.2940
+ 1-4 NB =        17.9799  1-4 EEL =        23.5620  VDWAALS    =      1948.9483
+ EELEC  =      7625.1534  EHBOND  =         0.0000  RESTRAINT  =        45.0773
+ EAMBER (non-restraint)  =      6121.5309
+ DV/DL  =         1.7556
+ Ewald error estimate:   0.8402E-04
+ ------------------------------------------------------------------------------
+
+  Softcore part of the system:       2 atoms,       TEMP(K)    =         132.57
+ SC_Etot=         1.0016  SC_EKtot=         0.6586  SC_EPtot   =         0.4626
+ SC_BOND=         0.4205  SC_ANGLE=         0.5661  SC_DIHED   =         0.3191
+ SC_14NB=         0.0409  SC_14EEL=         0.6779  SC_VDW     =         0.0000
+ SC_EEL =         0.0000
+ SC_RES_DIST=     0.4116  SC_RES_ANG=       0.0000  SC_RES_TORS=         0.0000
+ SC_EEL_DER=      0.1368  SC_VDW_DER=       1.5032  SC_DERIV   =         1.4302
+ ------------------------------------------------------------------------------
+
+
+      DV/DL, AVERAGES OVER      10 STEPS
+
+
+ NSTEP =    10000   TIME(PS) =      20.000  TEMP(K) =    59.86  PRESS =     0.0
+ Etot   =         0.0000  EKtot   =         0.0000  EPtot      =        11.3354
+ BOND   =         0.0000  ANGLE   =         0.0000  DIHED      =         0.0000
+ 1-4 NB =         0.0000  1-4 EEL =        -8.1880  VDWAALS    =         5.7305
+ EELEC  =        13.7929  EHBOND  =         0.0000  RESTRAINT  =        -0.0000
+ EAMBER (non-restraint)  =        11.3354
+ DV/DL  =        11.3354
+ Ewald error estimate:   0.0000E+00
+ ------------------------------------------------------------------------------
+
+
+ NMR restraints on final step:
+
+--------------------------------------------------------------------------------
+   5.  TIMINGS
+--------------------------------------------------------------------------------
+
+|  NonSetup CPU Time in Major Routines, Average for All Tasks:
+|
+|     Routine           Sec        %
+|     ------------------------------
+|     DataDistrib      31.40    6.37
+|     Nonbond         440.85   89.36
+|     Bond              1.78    0.36
+|     Angle             1.57    0.32
+|     Dihedral          8.23    1.67
+|     Shake             3.96    0.80
+|     RunMD             5.54    1.12
+|     Other             0.02    0.00
+|     ------------------------------
+|     Total           493.34
+
+|  PME Nonbond Pairlist CPU Time, Average for All Tasks:
+|
+|     Routine              Sec        %
+|     ---------------------------------
+|     Set Up Cit           0.78    0.16
+|     Build List          37.47    7.60
+|     ---------------------------------
+|     Total               38.25    7.75
+
+|  PME Direct Force CPU Time, Average for All Tasks:
+|
+|     Routine              Sec        %
+|     ---------------------------------
+|     NonBonded Calc     212.63   43.10
+|     Exclude Masked      10.57    2.14
+|     Other               15.35    3.11
+|     ---------------------------------
+|     Total              238.55   48.35
+
+|  PME Reciprocal Force CPU Time, Average for All Tasks:
+|
+|     Routine              Sec        %
+|     ---------------------------------
+|     1D bspline          11.28    2.29
+|     Grid Charges        18.61    3.77
+|     Scalar Sum           5.73    1.16
+|     Gradient Sum        29.63    6.01
+|     FFT                 98.77   20.02
+|     ---------------------------------
+|     Total              164.02   33.25
+
+|  PME Load Balancing CPU Time, Average for All Tasks:
+|
+|     Routine                 Sec        %
+|     ------------------------------------
+|     Atom Reassign           0.00    0.00
+|     Image Reassign          0.00    0.00
+|     FFT Reassign            0.00    0.00
+|     ------------------------------------
+|     Total                   0.01    0.00
+
+|  Final Performance Info:
+|     -----------------------------------------------------
+|     Average timings for last    1000 steps:
+|     Elapsed(s) =      48.76 Per Step(ms) =      48.76
+|         ns/day =       3.54   seconds/ns =   24377.67
+|
+|     Average timings for all steps:
+|     Elapsed(s) =     493.81 Per Step(ms) =      49.38
+|         ns/day =       3.50   seconds/ns =   24690.34
+|     -----------------------------------------------------
+
+|  Master Setup CPU time:            0.28 seconds
+|  Master NonSetup CPU time:       493.16 seconds
+|  Master Total CPU time:          493.44 seconds     0.14 hours
+
+|  Master Setup wall time:           0    seconds
+|  Master NonSetup wall time:      494    seconds
+|  Master Total wall time:         494    seconds     0.14 hours
