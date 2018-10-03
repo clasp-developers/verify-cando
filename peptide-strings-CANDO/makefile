@@ -11,6 +11,9 @@ three-run:
 four-run:
 	$(HOME)/Development/amber18/bin/sander -O -i md.in -o md-one4.out -p four1.top -c four1.crd
 
+four2-run:
+	$(HOME)/Development/amber18/bin/sander -O -i md.in -o md-one4-2.out -p four2.top -c four2.crd
+
 five-run:
 	$(HOME)/Development/amber18/bin/sander -O -i md.in -o md-one5.out -p five1.top -c five1.crd
 
@@ -49,4 +52,10 @@ four1-run:
 
 four1-amber-run:
 	$(HOME)/Development/amber18/bin/sander -O -i md.in -o md-four1-leap.out -p prmtop -c inpcrd
+
+four-water-cando-run:
+	$(HOME)/Development/amber18/bin/sander -O -i md.in -o md-four-cando.out -p solvated_four.top -c solvated_four.crd
+
+four-water-leap-run:
+	$(HOME)/Development/amber18/bin/sander -O -i md.in -o md-four-leap.out -p solvated_four_leap.top -c solvated_four_leap.crd
 
