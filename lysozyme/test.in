@@ -1,6 +1,6 @@
 #!/bin/sh
 
 source leaprc.protein.ff14SB
-foo = loadMol2 solvated_lyz-cando.mol2
-saveamberparm foo solvated-lyz-leap.top solvated-lyz-leap.crd
+foo = loadMol2 181L_mod.mol2
+saveamberparm foo lyz-leap.top lyz-leap.crd
 quit
