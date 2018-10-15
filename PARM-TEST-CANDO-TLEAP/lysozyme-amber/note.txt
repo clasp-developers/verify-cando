@@ -1,0 +1,1 @@
+When the file convertion from pdb to mol2 was done and mol2 read back, there was an additional field tb that i had to remove for the leap to generate parameters

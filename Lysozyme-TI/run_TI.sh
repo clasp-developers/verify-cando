@@ -23,3 +23,8 @@
 ./free_energy/submit_ligands.sh
 ./free_energy/analyse.sh > result-TI.txt
 
+#NOTE: for the fe-just-ligand-in-sol, follow all the steps for setup exactly as above except submit_complex.sh
+
+./fe-just-ligand-in-sol/setup.sh
+./fe-just-ligand-in-sol/submit_ligands.sh
+./fe-just-ligand-in-sol/analyse.sh > result-TI-just-lig-in-sol.txt
