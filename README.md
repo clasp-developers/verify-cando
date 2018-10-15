@@ -18,6 +18,8 @@ This section has two folders:
                 b. submit_ligands.sh
 `               c. analyse.sh
 
+
+
 2. PARM-TEST-CANDO-TLEAP - verification of parameterization using cando and tleap
 
 lysozyme-add-H-tleap-cando: Usha uploaded parameter files generated from cando for lysozyme written as a mol2 file
