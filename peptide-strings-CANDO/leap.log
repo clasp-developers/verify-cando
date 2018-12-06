@@ -1,0 +1,732 @@
+log started: Fri Oct  5 10:12:52 2018
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /Users/shiho/Development/amber18/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /Users/shiho/Development/amber18/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino12.lib
+Loading library: /Users/shiho/Development/amber18/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /Users/shiho/Development/amber18/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /Users/shiho/Development/amber18/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "HYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> foo = loadMol2 solvated_hie.mol2
+Loading Mol2 file: ./solvated_hie.mol2
+Reading MOLECULE named ACE
+> saveamberparm foo prmtop inpcrd
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 8 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	ACE_1	1
+	HIE_2	1
+	NME_3	1
+	WAT_10	1
+	WAT_100	1
+	WAT_101	1
+	WAT_102	1
+	WAT_103	1
+	WAT_104	1
+	WAT_105	1
+	WAT_106	1
+	WAT_107	1
+	WAT_108	1
+	WAT_109	1
+	WAT_11	1
+	WAT_110	1
+	WAT_111	1
+	WAT_112	1
+	WAT_113	1
+	WAT_114	1
+	WAT_115	1
+	WAT_116	1
+	WAT_117	1
+	WAT_118	1
+	WAT_119	1
+	WAT_12	1
+	WAT_120	1
+	WAT_121	1
+	WAT_122	1
+	WAT_123	1
+	WAT_124	1
+	WAT_125	1
+	WAT_126	1
+	WAT_127	1
+	WAT_128	1
+	WAT_129	1
+	WAT_13	1
+	WAT_130	1
+	WAT_131	1
+	WAT_132	1
+	WAT_133	1
+	WAT_134	1
+	WAT_135	1
+	WAT_136	1
+	WAT_137	1
+	WAT_138	1
+	WAT_139	1
+	WAT_14	1
+	WAT_140	1
+	WAT_141	1
+	WAT_142	1
+	WAT_143	1
+	WAT_144	1
+	WAT_145	1
+	WAT_146	1
+	WAT_147	1
+	WAT_148	1
+	WAT_149	1
+	WAT_15	1
+	WAT_150	1
+	WAT_151	1
+	WAT_152	1
+	WAT_153	1
+	WAT_154	1
+	WAT_155	1
+	WAT_156	1
+	WAT_157	1
+	WAT_158	1
+	WAT_159	1
+	WAT_16	1
+	WAT_160	1
+	WAT_161	1
+	WAT_162	1
+	WAT_163	1
+	WAT_164	1
+	WAT_165	1
+	WAT_166	1
+	WAT_167	1
+	WAT_168	1
+	WAT_169	1
+	WAT_17	1
+	WAT_170	1
+	WAT_171	1
+	WAT_172	1
+	WAT_173	1
+	WAT_174	1
+	WAT_175	1
+	WAT_176	1
+	WAT_177	1
+	WAT_178	1
+	WAT_179	1
+	WAT_18	1
+	WAT_180	1
+	WAT_181	1
+	WAT_182	1
+	WAT_183	1
+	WAT_184	1
+	WAT_185	1
+	WAT_186	1
+	WAT_187	1
+	WAT_188	1
+	WAT_189	1
+	WAT_19	1
+	WAT_190	1
+	WAT_191	1
+	WAT_192	1
+	WAT_193	1
+	WAT_194	1
+	WAT_195	1
+	WAT_196	1
+	WAT_197	1
+	WAT_198	1
+	WAT_199	1
+	WAT_20	1
+	WAT_200	1
+	WAT_201	1
+	WAT_202	1
+	WAT_203	1
+	WAT_204	1
+	WAT_205	1
+	WAT_206	1
+	WAT_207	1
+	WAT_208	1
+	WAT_209	1
+	WAT_21	1
+	WAT_210	1
+	WAT_211	1
+	WAT_212	1
+	WAT_213	1
+	WAT_214	1
+	WAT_215	1
+	WAT_216	1
+	WAT_217	1
+	WAT_218	1
+	WAT_219	1
+	WAT_22	1
+	WAT_220	1
+	WAT_221	1
+	WAT_222	1
+	WAT_223	1
+	WAT_224	1
+	WAT_225	1
+	WAT_226	1
+	WAT_227	1
+	WAT_228	1
+	WAT_229	1
+	WAT_23	1
+	WAT_230	1
+	WAT_231	1
+	WAT_232	1
+	WAT_233	1
+	WAT_234	1
+	WAT_235	1
+	WAT_236	1
+	WAT_237	1
+	WAT_238	1
+	WAT_239	1
+	WAT_24	1
+	WAT_240	1
+	WAT_241	1
+	WAT_242	1
+	WAT_243	1
+	WAT_244	1
+	WAT_245	1
+	WAT_246	1
+	WAT_247	1
+	WAT_248	1
+	WAT_249	1
+	WAT_25	1
+	WAT_250	1
+	WAT_251	1
+	WAT_252	1
+	WAT_253	1
+	WAT_254	1
+	WAT_255	1
+	WAT_256	1
+	WAT_257	1
+	WAT_258	1
+	WAT_259	1
+	WAT_26	1
+	WAT_260	1
+	WAT_261	1
+	WAT_262	1
+	WAT_263	1
+	WAT_264	1
+	WAT_265	1
+	WAT_266	1
+	WAT_267	1
+	WAT_268	1
+	WAT_269	1
+	WAT_27	1
+	WAT_270	1
+	WAT_271	1
+	WAT_272	1
+	WAT_273	1
+	WAT_274	1
+	WAT_275	1
+	WAT_276	1
+	WAT_277	1
+	WAT_278	1
+	WAT_279	1
+	WAT_28	1
+	WAT_280	1
+	WAT_281	1
+	WAT_282	1
+	WAT_283	1
+	WAT_284	1
+	WAT_285	1
+	WAT_286	1
+	WAT_287	1
+	WAT_288	1
+	WAT_289	1
+	WAT_29	1
+	WAT_290	1
+	WAT_291	1
+	WAT_292	1
+	WAT_293	1
+	WAT_294	1
+	WAT_295	1
+	WAT_296	1
+	WAT_297	1
+	WAT_298	1
+	WAT_299	1
+	WAT_30	1
+	WAT_300	1
+	WAT_301	1
+	WAT_302	1
+	WAT_303	1
+	WAT_304	1
+	WAT_305	1
+	WAT_306	1
+	WAT_307	1
+	WAT_308	1
+	WAT_309	1
+	WAT_31	1
+	WAT_310	1
+	WAT_311	1
+	WAT_312	1
+	WAT_313	1
+	WAT_314	1
+	WAT_315	1
+	WAT_316	1
+	WAT_317	1
+	WAT_318	1
+	WAT_319	1
+	WAT_32	1
+	WAT_320	1
+	WAT_321	1
+	WAT_322	1
+	WAT_323	1
+	WAT_324	1
+	WAT_325	1
+	WAT_326	1
+	WAT_327	1
+	WAT_328	1
+	WAT_329	1
+	WAT_33	1
+	WAT_330	1
+	WAT_331	1
+	WAT_332	1
+	WAT_333	1
+	WAT_334	1
+	WAT_335	1
+	WAT_336	1
+	WAT_337	1
+	WAT_338	1
+	WAT_339	1
+	WAT_34	1
+	WAT_340	1
+	WAT_341	1
+	WAT_342	1
+	WAT_343	1
+	WAT_344	1
+	WAT_345	1
+	WAT_346	1
+	WAT_347	1
+	WAT_348	1
+	WAT_349	1
+	WAT_35	1
+	WAT_350	1
+	WAT_351	1
+	WAT_352	1
+	WAT_353	1
+	WAT_354	1
+	WAT_355	1
+	WAT_356	1
+	WAT_357	1
+	WAT_358	1
+	WAT_359	1
+	WAT_36	1
+	WAT_360	1
+	WAT_361	1
+	WAT_362	1
+	WAT_363	1
+	WAT_364	1
+	WAT_365	1
+	WAT_366	1
+	WAT_367	1
+	WAT_368	1
+	WAT_369	1
+	WAT_37	1
+	WAT_370	1
+	WAT_371	1
+	WAT_372	1
+	WAT_373	1
+	WAT_374	1
+	WAT_375	1
+	WAT_376	1
+	WAT_377	1
+	WAT_378	1
+	WAT_379	1
+	WAT_38	1
+	WAT_380	1
+	WAT_381	1
+	WAT_382	1
+	WAT_383	1
+	WAT_384	1
+	WAT_385	1
+	WAT_386	1
+	WAT_387	1
+	WAT_388	1
+	WAT_389	1
+	WAT_39	1
+	WAT_390	1
+	WAT_391	1
+	WAT_392	1
+	WAT_393	1
+	WAT_394	1
+	WAT_395	1
+	WAT_396	1
+	WAT_397	1
+	WAT_398	1
+	WAT_399	1
+	WAT_4	1
+	WAT_40	1
+	WAT_400	1
+	WAT_401	1
+	WAT_402	1
+	WAT_403	1
+	WAT_404	1
+	WAT_405	1
+	WAT_406	1
+	WAT_407	1
+	WAT_408	1
+	WAT_409	1
+	WAT_41	1
+	WAT_410	1
+	WAT_411	1
+	WAT_412	1
+	WAT_413	1
+	WAT_414	1
+	WAT_415	1
+	WAT_416	1
+	WAT_417	1
+	WAT_418	1
+	WAT_419	1
+	WAT_42	1
+	WAT_420	1
+	WAT_421	1
+	WAT_422	1
+	WAT_423	1
+	WAT_424	1
+	WAT_425	1
+	WAT_426	1
+	WAT_427	1
+	WAT_428	1
+	WAT_429	1
+	WAT_43	1
+	WAT_430	1
+	WAT_431	1
+	WAT_432	1
+	WAT_433	1
+	WAT_434	1
+	WAT_435	1
+	WAT_436	1
+	WAT_437	1
+	WAT_438	1
+	WAT_439	1
+	WAT_44	1
+	WAT_440	1
+	WAT_441	1
+	WAT_442	1
+	WAT_443	1
+	WAT_444	1
+	WAT_445	1
+	WAT_446	1
+	WAT_447	1
+	WAT_448	1
+	WAT_449	1
+	WAT_45	1
+	WAT_450	1
+	WAT_451	1
+	WAT_452	1
+	WAT_453	1
+	WAT_454	1
+	WAT_455	1
+	WAT_456	1
+	WAT_457	1
+	WAT_458	1
+	WAT_459	1
+	WAT_46	1
+	WAT_460	1
+	WAT_461	1
+	WAT_462	1
+	WAT_463	1
+	WAT_464	1
+	WAT_465	1
+	WAT_466	1
+	WAT_467	1
+	WAT_468	1
+	WAT_469	1
+	WAT_47	1
+	WAT_470	1
+	WAT_471	1
+	WAT_472	1
+	WAT_473	1
+	WAT_474	1
+	WAT_475	1
+	WAT_476	1
+	WAT_477	1
+	WAT_478	1
+	WAT_479	1
+	WAT_48	1
+	WAT_480	1
+	WAT_481	1
+	WAT_482	1
+	WAT_483	1
+	WAT_484	1
+	WAT_485	1
+	WAT_49	1
+	WAT_5	1
+	WAT_50	1
+	WAT_51	1
+	WAT_52	1
+	WAT_53	1
+	WAT_54	1
+	WAT_55	1
+	WAT_56	1
+	WAT_57	1
+	WAT_58	1
+	WAT_59	1
+	WAT_6	1
+	WAT_60	1
+	WAT_61	1
+	WAT_62	1
+	WAT_63	1
+	WAT_64	1
+	WAT_65	1
+	WAT_66	1
+	WAT_67	1
+	WAT_68	1
+	WAT_69	1
+	WAT_7	1
+	WAT_70	1
+	WAT_71	1
+	WAT_72	1
+	WAT_73	1
+	WAT_74	1
+	WAT_75	1
+	WAT_76	1
+	WAT_77	1
+	WAT_78	1
+	WAT_79	1
+	WAT_8	1
+	WAT_80	1
+	WAT_81	1
+	WAT_82	1
+	WAT_83	1
+	WAT_84	1
+	WAT_85	1
+	WAT_86	1
+	WAT_87	1
+	WAT_88	1
+	WAT_89	1
+	WAT_9	1
+	WAT_90	1
+	WAT_91	1
+	WAT_92	1
+	WAT_93	1
+	WAT_94	1
+	WAT_95	1
+	WAT_96	1
+	WAT_97	1
+	WAT_98	1
+	WAT_99	1
+  )
+ (no restraints)
+> quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 0; Notes = 0.

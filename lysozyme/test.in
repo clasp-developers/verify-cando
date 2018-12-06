@@ -1,0 +1,6 @@
+#!/bin/sh
+
+source leaprc.protein.ff14SB
+foo = loadMol2 solvated-2rjv.mol2
+saveamberparm foo solvated-2rjv-leap.top solvated-2rjv-leap.crd
+quit

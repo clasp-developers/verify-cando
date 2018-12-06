@@ -1,0 +1,191 @@
+
+          -------------------------------------------------------
+          Amber 18 SANDER                              2018
+          -------------------------------------------------------
+
+| Run on 10/23/2018 at 10:10:40
+
+|   Executable path: /Users/shiho/Development/amber18/bin/sander
+| Working directory: /Users/shiho/Development/verify-cando/lysozyme
+|          Hostname: Unknown
+  [-O]verwriting output
+
+File Assignments:
+|  MDIN: md.in                                                                 
+| MDOUT: md-2rjv-cando.out                                                     
+|INPCRD: solvated-2rjv-cando.crd                                               
+|  PARM: solvated-2rjv-cando.top                                               
+|RESTRT: restrt                                                                
+|  REFC: refc                                                                  
+| MDVEL: mdvel                                                                 
+| MDFRC: mdfrc                                                                 
+|  MDEN: mden                                                                  
+| MDCRD: mdcrd                                                                 
+|MDINFO: mdinfo                                                                
+|  MTMD: mtmd                                                                  
+|INPDIP: inpdip                                                                
+|RSTDIP: rstdip                                                                
+|INPTRA: inptraj                                                               
+
+
+ Here is the input file:
+
+# check                                                                        
+ &cntrl                                                                        
+ imin=1                                                                        
+ maxcyc=1                                                                      
+ ntb=0                                                                         
+ cut=99                                                                        
+ /                                                                             
+
+--------------------------------------------------------------------------------
+   1.  RESOURCE   USE: 
+--------------------------------------------------------------------------------
+
+| Flags:                                                                        
+|    NONPERIODIC   ntb=0 and igb=0: Setting up nonperiodic simulation
+|  *** cutoff > system size, list only builds once
+|Largest sphere to fit in unit cell has radius =    49.536
+| New format PARM file being parsed.
+| Version =    1.000 Date = 10/23/18 Time = 10:10:43
+ NATOM  =    5104 NTYPES =      14 NBONH =    4565 MBONA  =     551
+ NTHETH =    5268 MTHETA =     744 NPHIH =    2488 MPHIA  =    2300
+ NHPARM =       0 NPARM  =       0 NNB   =   11378 NRES   =    1408
+ NBONA  =     551 NTHETA =     744 NPHIA =    2300 NUMBND =      60
+ NUMANG =     140 NPTRA  =     157 NATYP =      29 NPHB   =       0
+ IFBOX  =       0 NMXRS  =      24 IFCAP =       0 NEXTRA =       0
+ NCOPY  =       0
+
+
+|     Memory Use     Allocated
+|     Real              403359
+|     Hollerith          16722
+|     Integer           383157
+|     Max Pairs       13022856
+|     nblistReal         61248
+|     nblist Int       4543805
+|       Total            73811 kbytes
+
+| Note: 1-4 EEL scale factors are being read from the topology file.
+
+| Note: 1-4 VDW scale factors are being read from the topology file.
+| Duplicated    0 dihedrals
+| Duplicated    0 dihedrals
+
+--------------------------------------------------------------------------------
+   2.  CONTROL  DATA  FOR  THE  RUN
+--------------------------------------------------------------------------------
+
+NIL                                                                             
+
+General flags:
+     imin    =       1, nmropt  =       0
+
+Nature and format of input:
+     ntx     =       1, irest   =       0, ntrx    =       1
+
+Nature and format of output:
+     ntxo    =       2, ntpr    =      50, ntrx    =       1, ntwr    =       1
+     iwrap   =       0, ntwx    =       0, ntwv    =       0, ntwe    =       0
+     ioutfm  =       1, ntwprt  =       0, idecomp =       0, rbornstat=      0
+
+Potential function:
+     ntf     =       1, ntb     =       0, igb     =       0, nsnb    =      25
+     ipol    =       0, gbsa    =       0, iesp    =       0
+     dielc   =   1.00000, cut     =  99.00000, intdiel =   1.00000
+
+Frozen or restrained atoms:
+     ibelly  =       0, ntr     =       0
+
+Energy minimization:
+     maxcyc  =       1, ncyc    =      10, ntmin   =       1
+     dx0     =   0.01000, drms    =   0.00010
+|  INFO: Old style inpcrd file read
+
+
+--------------------------------------------------------------------------------
+   3.  ATOMIC COORDINATES AND VELOCITIES
+--------------------------------------------------------------------------------
+
+NIL                                                                             
+ begin time read from input coords =     0.000 ps
+
+ Number of triangulated 3-point waters found:     1341
+
+     Sum of charges from parm topology file =   0.00000309
+     Forcing neutrality...
+
+--------------------------------------------------------------------------------
+   4.  RESULTS
+--------------------------------------------------------------------------------
+
+ ---------------------------------------------------
+
+     eedmeth=4: Setting switch to one everywhere
+
+ ---------------------------------------------------
+| Local SIZE OF NONBOND LIST =   13012874
+| TOTAL SIZE OF NONBOND LIST =   13012874
+
+
+   NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
+      1      -9.2217E+03     1.6952E+01     9.3544E+01     CA        374
+
+ BOND    =     1179.3675  ANGLE   =      207.7738  DIHED      =      798.6533
+ VDWAALS =      720.5207  EEL     =   -15592.3487  HBOND      =        0.0000
+ 1-4 VDW =      349.3460  1-4 EEL =     3114.9995  RESTRAINT  =        0.0000
+
+
+  Maximum number of minimization cycles reached.
+
+
+                    FINAL RESULTS
+
+
+
+   NSTEP       ENERGY          RMS            GMAX         NAME    NUMBER
+      1      -9.2217E+03     1.6952E+01     9.3544E+01     CA        374
+
+ BOND    =     1179.3675  ANGLE   =      207.7738  DIHED      =      798.6533
+ VDWAALS =      720.5207  EEL     =   -15592.3487  HBOND      =        0.0000
+ 1-4 VDW =      349.3460  1-4 EEL =     3114.9995  RESTRAINT  =        0.0000
+
+--------------------------------------------------------------------------------
+   5.  TIMINGS
+--------------------------------------------------------------------------------
+
+|    Read coords time           0.00 ( 0.39% of Total)
+|    Fast Water setup           0.00 ( 0.01% of Total)
+|                Build the list             0.14 (99.82% of List )
+|                Other                      0.00 ( 0.18% of List )
+|             List time                  0.14 (15.88% of Nonbo)
+|                   Short_ene time             0.72 (100.0% of Direc)
+|                   Other                      0.00 ( 0.03% of Direc)
+|                Direct Ewald time          0.72 (100.0% of Ewald)
+|                Other                      0.00 ( 0.03% of Ewald)
+|             Ewald time                 0.72 (84.12% of Nonbo)
+|          Nonbond force              0.85 (99.76% of Force)
+|          Bond/Angle/Dihedral        0.00 ( 0.23% of Force)
+|          Other                      0.00 ( 0.01% of Force)
+|       Force time                 0.86 (100.0% of Runmd)
+|    Runmd Time                 0.86 (92.37% of Total)
+|    Other                      0.07 ( 7.23% of Total)
+| Total time                 0.93 (100.0% of ALL  )
+
+| Number of list builds   :          1
+
+| Highest rstack allocated:      25505
+| Highest istack allocated:       5101
+|           Job began  at 10:10:40.631  on 10/23/2018
+|           Setup done at 10:10:40.686  on 10/23/2018
+|           Run   done at 10:10:41.559  on 10/23/2018
+|     wallclock() was called      58 times
+
+|3D-RISM memory allocation summary
+|Type          Maximum        Current   
+|Integer       0.00000 GB     0.00000 GB
+|Real          0.00000 GB     0.00000 GB
+|Logical       0.00000 GB     0.00000 GB
+|Character     0.00000 GB     0.00000 GB
+|---------------------------------------
+|Total         0.00000 GB     0.00000 GB

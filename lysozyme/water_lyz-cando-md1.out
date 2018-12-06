@@ -1,0 +1,97 @@
+bash-3.2$ cd Development/verify-cando/
+bash-3.2$ ls
+README.md			lysozyme
+add-hydrogen-tleap-cando	peptide-strings-CANDO
+bash-3.2$ cd lysozyme/
+bash-3.2$ ls
+181L_mod.pdb			lyz-cando.rst7			solvated_lyz-cando.parm7
+Lysozyme.ipynb			md.in				solvated_lyz-cando.rst7
+leap.log			md_lyz-amber.info		solvated_lyz-cando1.parm7
+lyz-amber.parm7			solvated_lyz-amber.crd		solvated_lyz-cando1.rst7
+lyz-amber.rst7			solvated_lyz-amber.top		water_lyz-cando-md.out
+lyz-cando.parm7			solvated_lyz-cando.mol2		water_lyz-md.out
+bash-3.2$ ~/Development/amber18/bin/tleap 
+-I: Adding /Users/shiho/Development/amber18/dat/leap/prep to search path.
+-I: Adding /Users/shiho/Development/amber18/dat/leap/lib to search path.
+-I: Adding /Users/shiho/Development/amber18/dat/leap/parm to search path.
+-I: Adding /Users/shiho/Development/amber18/dat/leap/cmd to search path.
+
+Welcome to LEaP!
+(no leaprc in search path)
+> quit
+quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 0; Notes = 0.
+bash-3.2$ cd ~/Development/cando/extensions/cando/src/tests/peptide-strings/
+bash-3.2$ cd ../
+bash-3.2$ cd peptide-strings/
+bash-3.2$ ls
+Untitled.ipynb	leap.log	one.pdb
+bash-3.2$ pwd
+/Users/shiho/Development/cando/extensions/cando/src/tests/peptide-strings
+bash-3.2$ ls
+Untitled.ipynb	leap.log	one.pdb
+bash-3.2$ cd ../
+bash-3.2$ ls
+181L		alanine-demo	c6h12n2so2.lisp	pdbfile		tiny
+addions		boron		charge		peptide-strings
+bash-3.2$ cd 181L/
+bash-3.2$ ls
+181L-leap.mol2			leap.log			md_lyz-amber.info
+181L_mod-water.mol2		lyz-amber.parm7			mdinfo
+181L_mod-water.pdb		lyz-amber.rst7			prmtop
+181L_mod.pdb			lyz-cando.parm7			restrt
+Lysozyme.ipynb			lyz-cando.rst7			solvated_lyz-cando1.parm7
+cando-181L_mod.crd		lyz-cando1.parm7		solvated_lyz-cando1.rst7
+cando-181L_mod.mol2		lyz-cando1.rst7			water-181L_mod.out
+cando-181L_mod.top		lyz.out
+inpcrd				md.in
+bash-3.2$ cd ~/Development/verify-cando/
+bash-3.2$ ls
+README.md			lysozyme
+add-hydrogen-tleap-cando	peptide-strings-CANDO
+bash-3.2$ cd peptide-strings-CANDO/
+bash-3.2$ ls
+eight.pdb		fourteen1.top		md-one6.out		results-match.rtf
+eight1.crd		inpcrd			md-one7.out		results-no-match.rtf
+eight1.top		leap.log		md-one8.out		seven.pdb
+eleven.pdb		lyz.out			md-one9.out		seven1.crd
+eleven1.crd		makefile		md-three.out		seven1.top
+eleven1.top		makefile~		md-two.out		six.pdb
+fifteen.pdb		md-amber.out		md.in			six1.crd
+fifteen1.crd		md-five.out		mdinfo			six1.top
+fifteen1.top		md-four-leap.out	mdinfo-five		ten.pdb
+five.pdb		md-four.out		mdinfo-four		ten1.crd
+five1.crd		md-four1-leap.out	mdinfo-one		ten1.top
+five1.top		md-four1.out		mdinfo-three		thirteen.pdb
+four-leap.crd		md-one.out		mdinfo-two		thirteen1.crd
+four-leap.mol2		md-one1.out		nine.pdb		thirteen1.top
+four-leap.pdb		md-one10.out		nine1.crd		three.pdb
+four-leap.top		md-one11.out		nine1.top		three1.crd
+four-leap1.crd		md-one12.out		nine1.top~		three1.top
+four-leap1.top		md-one13.out		one.pdb			twelve.pdb
+four.pdb		md-one14.out		one1.crd		twelve1.crd
+four1.crd		md-one15.out		one1.top		twelve1.top
+four1.pdb		md-one2.out		peptide-strings.ipynb	two.pdb
+four1.top		md-one3.out		prmtop			two1.crd
+fourteen.pdb		md-one4.out		restrt			two1.top
+fourteen1.crd		md-one5.out		results-072718.rtf
+bash-3.2$ cd ../
+bash-3.2$ ls
+README.md			add-hydrogen-tleap-cando	lysozyme			peptide-strings-CANDO
+bash-3.2$ cd lysozyme/
+bash-3.2$ ls
+181L_mod.pdb			lyz-amber.rst7			md_lyz-amber.info		solvated_lyz-cando.parm7	water_lyz-cando-md.out
+Lysozyme.ipynb			lyz-cando.parm7			solvated_lyz-amber.crd		solvated_lyz-cando.rst7		water_lyz-md.out
+leap.log			lyz-cando.rst7			solvated_lyz-amber.top		solvated_lyz-cando1.parm7
+lyz-amber.parm7			md.in				solvated_lyz-cando.mol2		solvated_lyz-cando1.rst7
+bash-3.2$ ~/Development/amber18/bin/sander -O -i md.in -o water_lyz-cando-md1.out -p solvated_lyz-cando1.parm7 -c solvated_lyz-cando1.rst7 
+bash-3.2$ 
+bash-3.2$ ls
+181L_mod.pdb			lyz-cando.parm7			restrt				solvated_lyz-cando.rst7		water_lyz-cando-md1.out~
+Lysozyme.ipynb			lyz-cando.rst7			solvated_lyz-amber.crd		solvated_lyz-cando1.parm7	water_lyz-md.out
+leap.log			md.in				solvated_lyz-amber.top		solvated_lyz-cando1.rst7
+lyz-amber.parm7			md_lyz-amber.info		solvated_lyz-cando.mol2		water_lyz-cando-md.out
+lyz-amber.rst7			mdinfo				solvated_lyz-cando.parm7	water_lyz-cando-md1.out
+bash-3.2$ 
