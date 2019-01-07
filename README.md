@@ -28,3 +28,6 @@ lysozyme-amber: Usha uploaded parameter files generated from tleap for lysozyme 
 Run the 1_leap.sh to get the parameters and run_md.sh to generate .parm7, .rst7 and .info files for comparison with .info file of lysozyme-add-H-tleap-cand
 
 test-HIS: Usha uploaded files on Oct 3rd for a question raised by Shiho on charges after solvation of HIS
+
+Addded RNA-2ixy - this is a test system for RNA (without ions for now) but showing both CANDO and TLEAP gives same parameters using
+Shiho's compare-energy-nonbonded-parameters 
