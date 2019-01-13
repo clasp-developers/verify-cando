@@ -1,6 +1,7 @@
 # verify-cando
 This section has two folders:
 1. Lysozyme-TI - free energy calculation of transformation of benzene to phenol in lysozyme protein and in solution
+one-step (Vdw transformation) and three-steps(decharging- Vdw transformation and recharging)
 
         I. setup
                 Run the scripts
