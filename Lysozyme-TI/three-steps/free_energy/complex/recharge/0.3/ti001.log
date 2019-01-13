@@ -1,0 +1,225 @@
+
+Static FFT Slab Distribution:
+
+  FFT slabs assigned to    4 tasks
+  Maximum of   23 xy slabs per task
+  Maximum of   19 zx slabs per task
+  Count of FFT xy slabs assigned to each task:
+      22  22  23  23
+  Count of FFT xz slabs assigned to each task:
+      19  19  19  18
+
+Atom Distribution No.     2 at run step    2946:
+
+  Count of atoms assigned to each task:
+         7961     8295     8326     5972
+
+Atom Distribution No.     3 at run step    5863:
+
+  Count of atoms assigned to each task:
+         8009     8361     8143     6041
+
+Atom Distribution No.     4 at run step    8796:
+
+  Count of atoms assigned to each task:
+         8003     8448     8053     6050
+
+Atom Distribution No.     5 at run step   11721:
+
+  Count of atoms assigned to each task:
+         8042     8493     7942     6077
+
+Atom Distribution No.     6 at run step   14623:
+
+  Count of atoms assigned to each task:
+         8042     8493     7942     6077
+
+Atom Distribution No.     7 at run step   17543:
+
+  Count of atoms assigned to each task:
+         8063     8385     7903     6203
+
+Atom Distribution No.     8 at run step   20456:
+
+  Count of atoms assigned to each task:
+         8096     8304     7972     6182
+
+Atom Distribution No.     9 at run step   23389:
+
+  Count of atoms assigned to each task:
+         8108     8259     7972     6215
+
+Atom Distribution No.    10 at run step   26334:
+
+  Count of atoms assigned to each task:
+         8137     8241     7831     6345
+
+Atom Distribution No.    11 at run step   29271:
+
+  Count of atoms assigned to each task:
+         6785     8094     7966     7709
+
+Atom Distribution No.    12 at run step   32182:
+
+  Count of atoms assigned to each task:
+         8171     8025     7969     6389
+
+Atom Distribution No.    13 at run step   35099:
+
+  Count of atoms assigned to each task:
+         8102     8010     7969     6473
+
+Atom Distribution No.    14 at run step   38019:
+
+  Count of atoms assigned to each task:
+         8087     8073     7951     6443
+
+Atom Distribution No.    15 at run step   40957:
+
+  Count of atoms assigned to each task:
+         8087     8073     7951     6443
+
+Atom Distribution No.    16 at run step   43902:
+
+  Count of atoms assigned to each task:
+         8105     8007     7993     6449
+
+Atom Distribution No.    17 at run step   46827:
+
+  Count of atoms assigned to each task:
+         8141     8097     7957     6359
+
+Atom Distribution No.    18 at run step   49762:
+
+  Count of atoms assigned to each task:
+         8140     8055     7960     6399
+
+Atom Distribution No.    19 at run step   52693:
+
+  Count of atoms assigned to each task:
+         6791     7998     7975     7790
+
+Atom Distribution No.    20 at run step   55628:
+
+  Count of atoms assigned to each task:
+         8158     8061     7939     6396
+
+Atom Distribution No.    21 at run step   58576:
+
+  Count of atoms assigned to each task:
+         6739     8094     7975     7746
+
+Atom Distribution No.    22 at run step   61524:
+
+  Count of atoms assigned to each task:
+         6800     8076     7981     7697
+
+Atom Distribution No.    23 at run step   64450:
+
+  Count of atoms assigned to each task:
+         6809     8016     8047     7682
+
+Atom Distribution No.    24 at run step   67348:
+
+  Count of atoms assigned to each task:
+         8120     8091     7975     6368
+
+Atom Distribution No.    25 at run step   70257:
+
+  Count of atoms assigned to each task:
+         8051     8103     7966     6434
+
+Atom Distribution No.    26 at run step   73144:
+
+  Count of atoms assigned to each task:
+         8051     8103     7966     6434
+
+Atom Distribution No.    27 at run step   76070:
+
+  Count of atoms assigned to each task:
+         8051     8103     7966     6434
+
+Atom Distribution No.    28 at run step   79007:
+
+  Count of atoms assigned to each task:
+         8132     8031     7924     6467
+
+Atom Distribution No.    29 at run step   81928:
+
+  Count of atoms assigned to each task:
+         8114     8088     7891     6461
+
+Atom Distribution No.    30 at run step   84853:
+
+  Count of atoms assigned to each task:
+         8036     8127     7966     6425
+
+Atom Distribution No.    31 at run step   87771:
+
+  Count of atoms assigned to each task:
+         8051     8055     7948     6500
+
+Atom Distribution No.    32 at run step   90708:
+
+  Count of atoms assigned to each task:
+         8051     8055     7948     6500
+
+Atom Distribution No.    33 at run step   93625:
+
+  Count of atoms assigned to each task:
+         8103     8053     7927     6471
+
+Atom Distribution No.    34 at run step   96548:
+
+  Count of atoms assigned to each task:
+         6795     8074     7972     7713
+
+Atom Distribution No.    35 at run step   99476:
+
+  Count of atoms assigned to each task:
+         6808     8077     7957     7712
+
+Major Routine Parallel Profiling - NonSetup CPU Seconds:
+
+           D                                                              
+           a                                                              
+           t                                                              
+           a                              D                               
+           D         N                    i                               
+           i         o                    h                               
+           s         n             A      e      S      R      O         T
+   T       t         B      B      n      d      h      u      t         o
+   a       r         o      o      g      r      a      n      h         t
+   s       i         n      n      l      a      k      M      e         a
+   k       b         d      d      e      l      e      D      r         l
+------------------------------------------------------------------------------
+   0   253.4    8258.8   37.7   12.4   69.1   42.6  435.3    0.4    9109.5
+   1   230.7    8351.5   41.5    0.1    0.0   45.8  434.8    0.5    9104.9
+   2   245.9    8338.7   40.9    0.1    0.1   44.4  434.8    0.4    9105.2
+   3   384.3    7899.0   25.7   48.5  268.9   34.7  428.5    0.7    9090.4
+------------------------------------------------------------------------------
+ avg   278.6    8212.0   36.4   15.3   84.5   41.9  433.3    0.5    9102.5
+ min   230.7    7899.0   25.7    0.1    0.0   34.7  428.5    0.4    9090.4
+ max   384.3    8351.5   41.5   48.5  268.9   45.8  435.3    0.7    9109.5
+ std    61.6     184.2    6.4   19.8  110.1    4.3    2.8    0.1       7.2
+------------------------------------------------------------------------------
+
+PME NonBond Parallel Profiling - NonSetup CPU Seconds:
+
+                     D                           
+           P         i         R                 
+           a         r         e      L          
+           i         e         c      o          
+           r         c         i      a         T
+   T       l         t         p      d         o
+   a       i         F         F      B         t
+   s       s         r         r      a         a
+   k       t         c         c      l         l
+-------------------------------------------------
+   0   662.8    4079.1    3516.3    0.2    8258.4
+   1   666.3    4213.8    3471.0    0.2    8351.3
+   2   654.5    4130.7    3553.0    0.2    8338.3
+   3   555.6    3671.2    3671.8    0.2    7898.8
+-------------------------------------------------
+ avg   634.8    4023.7    3553.0    0.2    8211.7
+-------------------------------------------------

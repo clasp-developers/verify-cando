@@ -1,0 +1,12 @@
+ligands/decharge: -6.45455964593
+ligands/vdw_bonded: 1.16782032503
+ligands/recharge: -33.8968615228
+--------------------------------
+dG sum for ligands = -39.18360084370
+
+complex/decharge: -6.92825087171
+complex/vdw_bonded: 3.64681817641
+complex/recharge: -33.8632707714
+--------------------------------
+dG sum for complex = -37.14470346670
+

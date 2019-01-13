@@ -1,0 +1,27 @@
+
+ NSTEP =     8000   TIME(PS) =      16.000  TEMP(K) =   251.22  PRESS =     0.0
+ Etot   =     -7107.9141  EKtot   =      1309.7163  EPtot      =     -8417.6304
+ BOND   =         0.6949  ANGLE   =         2.3745  DIHED      =         1.5129
+ 1-4 NB =         3.5874  1-4 EEL =       -27.5513  VDWAALS    =      1365.5085
+ EELEC  =     -9765.2124  EHBOND  =         0.0000  RESTRAINT  =         1.4552
+ EAMBER (non-restraint)  =     -8419.0855
+ DV/DL  =       -34.7027
+ Ewald error estimate:   0.8687E-04
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+ ------------------------------------------------------------------------------
+| Current Timing Info
+| -------------------
+| Total steps :     10000 | Completed :      8000 | Remaining :      2000
+|
+| Average timings for last    4000 steps:
+|     Elapsed(s) =      63.01 Per Step(ms) =      15.75
+|         ns/day =      10.97   seconds/ns =    7875.70
+|
+| Average timings for all steps:
+|     Elapsed(s) =     124.50 Per Step(ms) =      15.56
+|         ns/day =      11.10   seconds/ns =    7781.02
+|
+|
+| Estimated time remaining:      31.1 seconds.
+ ------------------------------------------------------------------------------
