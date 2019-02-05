@@ -1,0 +1,21 @@
+Adding force field #<FORCE-FIELD gaff.dat> to DEFAULT
+Adding force field #<FORCE-FIELD frcmod.ionsjc_tip3p> to DEFAULT
+To load "fep":
+  Load 1 ASDF system:
+    fep
+; Loading "fep"
+
+name-topologys = ((:ZAB . #<TOPOLOGY  :name :ZAB @0x12577c058>)
+                  (:ZAA . #<TOPOLOGY  :name :ZAA @0x12579b828>))
+Registering ZAB #<TOPOLOGY  :name :ZAB @0x12577c058>
+Registering ZAA #<TOPOLOGY  :name :ZAA @0x12579b828>
+Box dimensions 112.39949999999999d0 109.7122d0 115.7784d0
+Saving matter to /Users/meister/quicklisp/local-projects/fep/examples/lysozyme/jobs/AA-AB/complex/recharge/recharge.mol2
+Constructing energy function
+Writing to /Users/meister/quicklisp/local-projects/fep/examples/lysozyme/jobs/AA-AB/complex/recharge/recharge.parm7
+Starting prepare-amber-energy-dihedral
+Ordering i1,i2,i3,i4 prepare-amber-energy-dihedral
+1-4 interactions prepare-amber-energy-dihedral
+Counting w and w/o water prepare-amber-energy-dihedral
+Extracting prepare-amber-energy-dihedral
+Saving     [*........................................] ETC:  3.08 hoursSaving     [***......................................] ETC:  2.00 hoursSaving     [***......................................] ETC:  1.46 hoursSaving     [*****....................................] ETC:  1.14 hoursSaving     [******...................................] ETC:  55.3 minutesSaving     [*******..................................] ETC:  46.1 minutesSaving     [*******..................................] ETC:  39.1 minutesSaving     [*********................................] ETC:  33.7 minutesSaving     [**********...............................] ETC:  29.4 minutesSaving     [***********..............................] ETC:  25.9 minutesSaving     [************.............................] ETC:  22.9 minutesSaving     [*************............................] ETC:  20.4 minutesSaving     [**************...........................] ETC:  18.3 minutesSaving     [***************..........................] ETC:  16.4 minutesSaving     [***************..........................] ETC:  14.8 minutesSaving     [*****************........................] ETC:  13.4 minutesSaving     [******************.......................] ETC:  12.1 minutesSaving     [*******************......................] ETC:  11.0 minutesSaving     [********************.....................] ETC:  10.0 minutesSaving     [*********************....................] ETC:   9.0 minutesSaving     [**********************...................] ETC:   8.2 minutesSaving     [***********************..................] ETC:   7.4 minutesSaving     [************************.................] ETC:   6.7 minutesSaving     [*************************................] ETC:   6.1 minutesSaving     [**************************...............] ETC:   5.5 minutesSaving     [***************************..............] ETC:   4.9 minutesSaving     [****************************.............] ETC:   4.4 minutesSaving     [*****************************............] ETC:   3.9 minutesSaving     [******************************...........] ETC:   3.5 minutesSaving     [*******************************..........] ETC:   3.1 minutesSaving     [*******************************..........] ETC:   2.7 minutesSaving     [*********************************........] ETC:   2.3 minutesSaving     [**********************************.......] ETC:   2.0 minutesSaving     [***********************************......] ETC:   1.6 minutesSaving     [************************************.....] ETC:   1.3 minutesSaving     [*************************************....] ETC:   1.0 minutesSaving     [**************************************...] ETC:  45.0 secondsSaving     [***************************************..] ETC:  29.2 secondsSaving     [****************************************.] ETC:  14.2 secondsSaving     [*****************************************] ETC: --Saving     [******************************************] ETC: --

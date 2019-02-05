@@ -1,0 +1,20 @@
+(COMMON-LISP:LOAD "source-dir:extensions;cando;src;lisp;start-cando.lisp")
+(QUICKLISP-CLIENT:QUICKLOAD :FEP)
+(LEAP:SETUP-AMBER-PATHS)
+(LEAP:SOURCE "leaprc.ff14SB.redq")
+(LEAP:SOURCE "leaprc.gaff")
+(LEAP:LOAD-AMBER-PARAMS "frcmod.ionsjc_tip3p")
+(QUICKLISP-CLIENT:QUICKLOAD :FEP)
+(FEP:LOAD-FEPS "postcharge/feps.cando")
+(COMMON-LISP:DEFPARAMETER FEP::LSOLV (CANDO:LOAD-MOL2 "AA-AB/ligand/solvated.mol2"))
+(COMMON-LISP:DEFPARAMETER FEP::LTARGET (CANDO:LOAD-MOL2 "AA-AB/ligand/target.mol2"))
+(COMMON-LISP:DEFPARAMETER FEP::RECHARGE
+  (CANDO:COMBINE (CHEM:MATTER-COPY FEP::LTARGET)
+                 (CHEM:MATTER-COPY FEP::LTARGET)
+                 (CHEM:MATTER-COPY FEP::LSOLV)))
+(LEAP.SET-BOX:SET-BOX FEP::RECHARGE :VDW)
+(CANDO:SAVE-MOL2 FEP::RECHARGE "AA-AB/ligand/recharge/recharge.mol2")
+(LEAP.TOPOLOGY:SAVE-AMBER-PARM-FORMAT FEP::RECHARGE
+                                      "AA-AB/ligand/recharge/recharge.parm7"
+                                      "AA-AB/ligand/recharge/recharge.rst7")
+(CORE:EXIT)

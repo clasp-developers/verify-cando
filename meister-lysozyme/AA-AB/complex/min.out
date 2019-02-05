@@ -1,0 +1,55 @@
+
+          -------------------------------------------------------
+          Amber 18 PMEMD                              2018
+          -------------------------------------------------------
+
+| PMEMD implementation of SANDER, Release 18
+
+| Run on 02/04/2019 at 04:51:22
+
+|   Executable path: /home/cracauer/work/amber/amber/bin/pmemd.cuda
+| Working directory: /home/meister/runjobs
+|          Hostname: Unknown
+  [-O]verwriting output
+
+File Assignments:
+|   MDIN: AA-AB/complex/min.in                                                  
+|  MDOUT: AA-AB/complex/min.out                                                 
+| INPCRD: AA-AB/complex/complex-vdw-bonded.rst7                                 
+|   PARM: AA-AB/complex/complex-vdw-bonded.parm7                                
+| RESTRT: AA-AB/complex/min.rst7                                                
+|   REFC: AA-AB/complex/complex-vdw-bonded.rst7                                 
+|  MDVEL: mdvel                                                                 
+|   MDEN: AA-AB/complex/min.en                                                  
+|  MDCRD: AA-AB/complex/min.nc                                                  
+| MDINFO: AA-AB/complex/min.info                                                
+|  MDFRC: mdfrc                                                                 
+
+
+ Here is the input file:
+
+minimisation                                                                   
+ &cntrl                                                                        
+   imin = 1, ntmin = 2,                                                        
+   maxcyc = 100,                                                               
+   ntpr = 20, ntwe = 20,                                                       
+   ntb = 1,                                                                    
+   ntr = 1, restraint_wt = 5.00,                                               
+   restraintmask='!:WAT & !@H=',                                               
+                                                                               
+   icfe = 1, ifsc = 1, clambda = 0.5, scalpha = 0.5, scbeta = 12.0,            
+   logdvdl = 0,                                                                
+   timask1 = ':1', timask2 = ':2',                                             
+   scmask1 = ':1@H7', scmask2 = ':2@H7,O1'                                     
+ /                                                                             
+ &ewald                                                                        
+ /                                                                             
+
+
+Note: ig = -1. Setting random seed to   711801 based on wallclock time in 
+      microseconds.
+| irandom = 1, using AMBER's internal random number generator (default).
+CUDA (GPU): alchemical free energy does not support minimization.
+            Require imin == 0.
+
+ Input errors occurred. Terminating execution.
