@@ -11,6 +11,7 @@ for system in ligands complex; do
   for step in decharge vdw_bonded recharge; do
     cd $step
 
+    echo python $getdvdl 5 ti001.en [01].*
     python $getdvdl 5 ti001.en [01].* > dvdl.dat
     echo -n "$system/$step: "
     dG=$(tail -n 1 dvdl.dat | awk '{print $4}')

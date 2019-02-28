@@ -1,0 +1,8 @@
+(COMMON-LISP:LOAD "source-dir:extensions;cando;src;lisp;start-cando.lisp")
+(QUICKLISP-CLIENT:QUICKLOAD :FEP)
+(COMMON-LISP:IN-PACKAGE :CANDO-USER)
+(COMMON-LISP:DEFPARAMETER FEP::*FEPS* (FEP:LOAD-FEPS "precharge/feps.cando"))
+(FEP:READ-AM1-CHARGES FEP::*FEPS*)
+(FEP:CALCULATE-AM1-BCC-CHARGES FEP::*FEPS*)
+(FEP:SAVE-FEPS FEP::*FEPS* "postcharge/feps.cando")
+(CORE:EXIT)

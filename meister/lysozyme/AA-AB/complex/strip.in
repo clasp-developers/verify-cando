@@ -1,0 +1,15 @@
+trajin AA-AB/complex/press.rst7
+
+# remove the two ligands and keep the rest
+strip ":1,2"
+outtraj AA-AB/complex/solvated.mol2 onlyframes 1
+
+# extract the first ligand
+unstrip
+strip ":2-999999"
+outtraj AA-AB/complex/source.mol2 onlyframes 1
+
+# extract the second ligand
+unstrip
+strip ":1,3-999999"
+outtraj AA-AB/complex/target.mol2 onlyframes 1

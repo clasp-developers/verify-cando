@@ -1,0 +1,3 @@
+distributor=3.17.190.3
+worker=g101.thirdlaw.tech
+pmemd_cuda=pmemd.cuda

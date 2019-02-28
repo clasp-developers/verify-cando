@@ -1,0 +1,2 @@
+cd runjobs || exit
+ 'pmemd.cuda' '-AllowSmallBox' '-i' 'AA-AB/complex/recharge/1.000/ti.in' '-c' 'AA-AB/complex/recharge/1.000/heat.rst7' '-p' 'AA-AB/complex/recharge/recharge.parm7' '-O' '-o' 'AA-AB/complex/recharge/1.000/ti001.out.tmp' '-inf' 'AA-AB/complex/recharge/1.000/ti001.info.tmp' '-e' 'AA-AB/complex/recharge/1.000/ti001.en.tmp' '-r' 'AA-AB/complex/recharge/1.000/ti001.rst7.tmp' '-x' 'AA-AB/complex/recharge/1.000/ti001.nc.tmp' '-l' 'AA-AB/complex/recharge/1.000/ti001.log'|| exit

@@ -1,0 +1,21 @@
+Adding force field #<FORCE-FIELD gaff.dat> to DEFAULT
+Adding force field #<FORCE-FIELD frcmod.ionsjc_tip3p> to DEFAULT
+To load "fep":
+  Load 1 ASDF system:
+    fep
+; Loading "fep"
+
+name-topologys = ((:ZAB . #<TOPOLOGY  :name :ZAB @0x1205c3058>)
+                  (:ZAA . #<TOPOLOGY  :name :ZAA @0x1205f3a08>))
+Registering ZAB #<TOPOLOGY  :name :ZAB @0x1205c3058>
+Registering ZAA #<TOPOLOGY  :name :ZAA @0x1205f3a08>
+Box dimensions 61.526199999999996d0 65.48219999999999d0 73.445d0
+Saving matter to /Users/meister/quicklisp/local-projects/fep/examples/lysozyme/jobs/AA-AB/complex/recharge/recharge.mol2
+Constructing energy function
+Writing to /Users/meister/quicklisp/local-projects/fep/examples/lysozyme/jobs/AA-AB/complex/recharge/recharge.parm7
+Starting prepare-amber-energy-dihedral
+Ordering i1,i2,i3,i4 prepare-amber-energy-dihedral
+1-4 interactions prepare-amber-energy-dihedral
+Counting w and w/o water prepare-amber-energy-dihedral
+Extracting prepare-amber-energy-dihedral
+Saving     [*........................................] ETC:  43.2 minutesSaving     [***......................................] ETC:  28.1 minutesSaving     [***......................................] ETC:  20.5 minutesSaving     [*****....................................] ETC:  16.0 minutesSaving     [******...................................] ETC:  12.9 minutesSaving     [*******..................................] ETC:  10.8 minutesSaving     [*******..................................] ETC:   9.1 minutesSaving     [*********................................] ETC:   7.9 minutesSaving     [**********...............................] ETC:   6.9 minutesSaving     [***********..............................] ETC:   6.0 minutesSaving     [************.............................] ETC:   5.4 minutesSaving     [*************............................] ETC:   4.8 minutesSaving     [**************...........................] ETC:   4.3 minutesSaving     [***************..........................] ETC:   3.8 minutesSaving     [***************..........................] ETC:   3.5 minutesSaving     [*****************........................] ETC:   3.1 minutesSaving     [******************.......................] ETC:   2.8 minutesSaving     [*******************......................] ETC:   2.6 minutesSaving     [********************.....................] ETC:   2.3 minutesSaving     [*********************....................] ETC:   2.1 minutesSaving     [**********************...................] ETC:   1.9 minutesSaving     [***********************..................] ETC:   1.7 minutesSaving     [************************.................] ETC:   1.6 minutesSaving     [*************************................] ETC:   1.4 minutesSaving     [**************************...............] ETC:   1.3 minutesSaving     [***************************..............] ETC:   1.2 minutesSaving     [****************************.............] ETC:   1.0 minutesSaving     [*****************************............] ETC:  55.4 secondsSaving     [******************************...........] ETC:  49.1 secondsSaving     [*******************************..........] ETC:  43.2 secondsSaving     [*******************************..........] ETC:  37.7 secondsSaving     [*********************************........] ETC:  32.5 secondsSaving     [**********************************.......] ETC:  27.6 secondsSaving     [***********************************......] ETC:  23.0 secondsSaving     [************************************.....] ETC:  18.6 secondsSaving     [*************************************....] ETC:  14.6 secondsSaving     [**************************************...] ETC:  10.7 secondsSaving     [***************************************..] ETC:   6.9 secondsSaving     [****************************************.] ETC:   3.4 secondsSaving     [*****************************************] ETC: --Saving     [******************************************] ETC: --
